@@ -1,0 +1,26 @@
+package com.colegiohogwarts.app.web.service.impl;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.colegiohogwarts.app.web.dao.IAsignaturaDao;
+import com.colegiohogwarts.app.web.modelo.Asignatura;
+import com.colegiohogwarts.app.web.service.IAsignaturarService;
+
+@Service
+public class AsignaturaService implements IAsignaturarService {
+	
+ @Autowired
+ private IAsignaturaDao asignaturaDao;
+	
+
+	@Override
+	public ArrayList<Asignatura> getAsiganturas(int idProfesor) {
+		
+	//	return profesorDao.getAsiganturas(idProfesor);
+		return null;
+	}
+
+}

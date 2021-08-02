@@ -1,0 +1,12 @@
+package com.colegiohogwarts.app.web.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestParam;
+import com.colegiohogwarts.app.web.dto.EstudianteAsignaturasDTO;
+
+public interface IEstudianteController {
+	
+	public ResponseEntity<ArrayList<EstudianteAsignaturasDTO>> getAsiganturasxprofeId(@RequestParam int idProfesor);
+}

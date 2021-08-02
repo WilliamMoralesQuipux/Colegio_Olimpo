@@ -1,0 +1,14 @@
+package com.colegiohogwarts.app.web.controller.impl;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.colegiohogwarts.app.web.controller.IEstudianteController;
+
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@RestController
+@RequestMapping("estudiante")
+public class EstudianteController implements IEstudianteController {
+
+}

@@ -1,0 +1,17 @@
+package com.colegiohogwarts.app.web.service.impl;
+
+import java.util.ArrayList;
+
+import com.colegiohogwarts.app.web.modelo.Asignatura;
+
+public class AsignaturaService {
+	
+	
+
+	@Override
+	public ArrayList<Asignatura> getAsiganturas(int idProfesor) {
+		
+	//	return profesorDao.getAsiganturas(idProfesor);
+	}
+
+}

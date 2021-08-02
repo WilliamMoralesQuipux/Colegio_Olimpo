@@ -1,0 +1,69 @@
+package com.colegiohogwarts.app.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+@SpringBootApplication
+public class ColegiohogwartsApplication implements CommandLineRunner {
+
+	@Autowired
+	private JdbcTemplate template;
+
+	public static void main(String[] args) {
+		SpringApplication.run(ColegiohogwartsApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+
+	   //Porfesores
+		template.execute("DROP TABLE PROFESOR IF EXISTS");
+		template.execute("CREATE TABLE PROFESOR ( idprofesor INTEGER(10) PRIMARY KEY auto_increment, nombre VARCHAR(30) ) ");
+
+		template.update("INSERT INTO PROFESOR (nombre) VALUES ('Nemesis')");
+		template.update("INSERT INTO PROFESOR (nombre) VALUES ('Priapo')");
+		template.update("INSERT INTO PROFESOR (nombre) VALUES ('Iris')");
+		
+		//Asignaturas
+		template.execute("DROP TABLE ASIGNATURA IF EXISTS");
+		template.execute("CREATE TABLE ASIGNATURA ( idasignatura INTEGER(10) PRIMARY KEY auto_increment, nombreasignatura VARCHAR(30) ) ");
+
+		template.update("INSERT INTO ASIGNATURA (nombreasignatura) VALUES ('Matematicas')");
+		template.update("INSERT INTO ASIGNATURA (nombreasignatura) VALUES ('Español')");
+		template.update("INSERT INTO ASIGNATURA (nombreasignatura) VALUES ('Ingles basico')");
+		template.update("INSERT INTO ASIGNATURA (nombreasignatura) VALUES ('Ingles avanzado')");
+		template.update("INSERT INTO ASIGNATURA (nombreasignatura) VALUES ('Pre Icfes')");
+	
+		//ProfesorxAsignatura
+		template.execute("DROP TABLE PROFESORxASIGNATURA IF EXISTS");
+		template.execute("CREATE TABLE PROFESORxASIGNATURA ( idprofexasign INTEGER(10) PRIMARY KEY auto_increment,  idprofesor INTEGER(10), idasignatura INTEGER(10) ) ");
+		
+		
+		template.update("INSERT INTO PROFESORxASIGNATURA (idprofesor , idasignatura) VALUES ( 1,  1)");
+		template.update("INSERT INTO PROFESORxASIGNATURA (idprofesor , idasignatura) VALUES ( 1,  5)");
+		template.update("INSERT INTO PROFESORxASIGNATURA (idprofesor , idasignatura) VALUES ( 2,  2)");
+		template.update("INSERT INTO PROFESORxASIGNATURA (idprofesor , idasignatura) VALUES ( 3,  3)");
+		template.update("INSERT INTO PROFESORxASIGNATURA (idprofesor , idasignatura) VALUES ( 3,  4)");
+	
+		//Cursos
+		template.execute("DROP TABLE CURSOS IF EXISTS");
+		template.execute("CREATE TABLE CURSOS ( idcurso INTEGER(10) PRIMARY KEY auto_increment, grado VARCHAR(5), salon VARCHAR(5) ) ");
+		template.update("INSERT INTO CURSOS (grado , salon) VALUES ( '10',  'A')");
+		template.update("INSERT INTO CURSOS (grado , salon) VALUES ( '10',  'B')");
+		template.update("INSERT INTO CURSOS (grado , salon) VALUES ( '11',  'A')");
+		template.update("INSERT INTO CURSOS (grado , salon) VALUES ( '11',  'B')");
+		
+		
+		//Estudiantes
+		template.execute("DROP TABLE ESTUDIANTE IF EXISTS");
+		template.execute("CREATE TABLE CURSOS ( idestudiante INTEGER(10) PRIMARY KEY auto_increment, nombre VARCHAR(5), idcurso INTEGER(5) ) ");
+		
+		
+		
+		
+	}
+
+}

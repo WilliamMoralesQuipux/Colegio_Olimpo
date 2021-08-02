@@ -1,0 +1,5 @@
+package com.colegiohogwarts.app.web.controller;
+
+public interface IProfesorController {
+
+}

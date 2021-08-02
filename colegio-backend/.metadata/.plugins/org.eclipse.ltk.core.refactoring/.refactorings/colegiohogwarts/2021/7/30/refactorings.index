@@ -1,0 +1,27 @@
+1627153046467	Encapsulate field 'Nombre'
+1627160458326	Encapsulate field 'idProfesor'
+1627160471643	Encapsulate field 'Nombre'
+1627160509333	Encapsulate field 'asignatura'
+1627161053573	Encapsulate field 'idAsignatura'
+1627161072929	Encapsulate field 'nombreAsignatura'
+1627161086308	Encapsulate field 'curso'
+1627161095083	Encapsulate field 'estudiantes'
+1627163539510	Encapsulate field 'idEstudiante'
+1627163556576	Encapsulate field 'nombre'
+1627166598781	Encapsulate field 'profesor'
+1627167217469	Encapsulate field 'idAsignatura'
+1627167227372	Encapsulate field 'nombreAsignatura'
+1627177748128	Delete element
+1627177753235	Delete element
+1627178027166	Delete element
+1627187035284	Move compilation unit
+1627187045369	Move compilation unit
+1627187050036	Move compilation unit
+1627187054775	Move compilation unit
+1627187060227	Delete element
+1627187996975	Move compilation unit
+1627188004575	Delete element
+1627188761640	Rename type 'IProfesor'
+1627189118369	Delete element
+1627189124077	Delete element
+1627189215715	Rename type 'IPersonaService'

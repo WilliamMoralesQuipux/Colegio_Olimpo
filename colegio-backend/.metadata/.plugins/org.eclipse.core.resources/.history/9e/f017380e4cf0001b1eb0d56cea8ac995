@@ -1,0 +1,9 @@
+package com.colegiohogwarts.app.web.modelo;
+
+public class Curso {
+	
+private int id;
+private String grado;
+private String salon;
+
+}

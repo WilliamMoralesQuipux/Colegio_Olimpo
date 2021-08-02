@@ -1,0 +1,46 @@
+package com.colegiohogwarts.app.web.modelo;
+
+public class Profesor {
+
+	private int idProfesor;
+	private String nombre;
+
+	public int getIdProfesor() {
+		return idProfesor;
+	}
+
+	public void setIdProfesor(int idProfesor) {
+		this.idProfesor = idProfesor;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idProfesor;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Profesor other = (Profesor) obj;
+		if (idProfesor != other.idProfesor)
+			return false;
+		return true;
+	}
+
+}

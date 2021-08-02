@@ -1,0 +1,14 @@
+package com.colegiohogwarts.app.web.service;
+
+import java.util.ArrayList;
+import com.colegiohogwarts.app.web.dto.ProfesorAsignaturaDTO;
+import com.colegiohogwarts.app.web.modelo.Asignatura;
+import com.colegiohogwarts.app.web.modelo.Profesor;
+
+public interface IProfesorService {
+
+	public ArrayList<Profesor> getListaProfesores();
+
+	public ArrayList<Asignatura> getAsiganturas(int idProfesor);	
+	
+}

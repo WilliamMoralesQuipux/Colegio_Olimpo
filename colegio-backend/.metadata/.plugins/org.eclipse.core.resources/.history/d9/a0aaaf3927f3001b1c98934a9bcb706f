@@ -1,0 +1,10 @@
+package com.colegiohogwarts.app.web.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.colegiohogwarts.app.web.service.IEstudianteService;
+
+@Service
+public class EstudianteService implements IEstudianteService {
+
+}

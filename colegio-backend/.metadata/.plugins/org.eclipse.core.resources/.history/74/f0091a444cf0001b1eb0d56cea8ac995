@@ -1,0 +1,33 @@
+package com.colegiohogwarts.app.web.modelo;
+
+public class Curso {
+
+	private int idCurso;
+	private String grado;
+	private String salon;
+
+	public int getIdCurso() {
+		return idCurso;
+	}
+
+	public void setIdCurso(int idCurso) {
+		this.idCurso = idCurso;
+	}
+
+	public String getGrado() {
+		return grado;
+	}
+
+	public void setGrado(String grado) {
+		this.grado = grado;
+	}
+
+	public String getSalon() {
+		return salon;
+	}
+
+	public void setSalon(String salon) {
+		this.salon = salon;
+	}
+
+}

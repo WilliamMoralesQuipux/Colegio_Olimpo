@@ -1,0 +1,83 @@
+package com.colegiohogwarts.app.web.controller;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.colegiohogwarts.app.web.dto.ProfesorAsignaturaDTO;
+import com.colegiohogwarts.app.web.modelo.Asignatura;
+import com.colegiohogwarts.app.web.modelo.Profesor;
+import com.colegiohogwarts.app.web.service.IProfesorService;
+
+@RestController
+@RequestMapping("profesor")
+public class ProfesorController {
+
+	@Autowired
+	private IProfesorService profesorService;
+
+	@RequestMapping(method = RequestMethod.GET, value = "/listaprofesores")
+	public ResponseEntity<ArrayList<Profesor>> getListaProfesores() {
+
+		ArrayList<Profesor> profesores = profesorService.getListaProfesores();
+		return new ResponseEntity<ArrayList<Profesor>>(profesores, HttpStatus.OK);
+
+	}
+
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/asignaturas")
+	public ResponseEntity<ArrayList<Profesor>> getAsiganturas(@RequestParam int idProfesor) {
+
+		ProfesorAsignaturaDTO outDto = new ProfesorAsignaturaDTO();
+
+		return new ResponseEntity<ProfesorAsignaturaDTO>(outDto, HttpStatus.OK);
+
+	}
+
+	
+	
+	
+	/*
+	@RequestMapping(method = RequestMethod.GET, value = "/asignaturas")
+	public ResponseEntity<ProfesorAsignaturaDTO> getAsiganturas(@RequestParam int idProfesor) {
+
+		ProfesorAsignaturaDTO outDto = new ProfesorAsignaturaDTO();
+
+		// Tabla profesor
+		HashMap<Integer, String> TablaProfesor = new HashMap<Integer, String>();
+		TablaProfesor.put(1, "Nemesis");
+		TablaProfesor.put(2, "Priapo");
+		TablaProfesor.put(3, "Iris");
+
+		//
+
+		Profesor profesor = new Profesor();
+		profesor.setIdProfesor(idProfesor);
+		profesor.setNombre(TablaProfesor.get(idProfesor));
+
+		Asignatura asignatura;
+		ArrayList<Asignatura> listAsignatura = new ArrayList<Asignatura>();
+
+		for (int i = 0; i <= 3; i++) {
+
+			asignatura = new Asignatura();
+			asignatura.setIdAsignatura(i);
+			asignatura.setNombreAsignatura("Calculo nro: " + i);
+			listAsignatura.add(asignatura);
+		}
+
+		outDto.setProfesor(profesor);
+		outDto.setAsignatura(listAsignatura);
+		return new ResponseEntity<ProfesorAsignaturaDTO>(outDto, HttpStatus.OK);
+
+	}
+	*/
+
+}

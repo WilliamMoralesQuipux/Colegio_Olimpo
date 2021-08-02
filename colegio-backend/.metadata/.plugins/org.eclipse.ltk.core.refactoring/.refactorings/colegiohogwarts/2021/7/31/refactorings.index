@@ -1,0 +1,5 @@
+1627417015693	Rename field 'Nombre'
+1627549523866	Encapsulate field 'idCurso'
+1627549542622	Encapsulate field 'grado'
+1627549554749	Encapsulate field 'salon'
+1627576892291	Move compilation unit

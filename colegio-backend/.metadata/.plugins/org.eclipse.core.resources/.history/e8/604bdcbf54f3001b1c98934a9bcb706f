@@ -1,0 +1,50 @@
+package com.colegiohogwarts.app.web.dao.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+import com.colegiohogwarts.app.web.dao.IEstudianteDao;
+import com.colegiohogwarts.app.web.dto.EstudianteAsignaturasDTO;
+
+@Repository
+public class EstudianteDao implements IEstudianteDao {
+
+	@Autowired
+	private JdbcTemplate template;
+
+	@Override
+	@SuppressWarnings("rawtypes")
+	public List<EstudianteAsignaturasDTO> getEstudiantexAsignaturaId(int idAsignatura) {
+		try {
+
+			String sql = "SELECT  ESTUDIANTE.nombre ,  CURSOS.grado , CURSOS.salon   FROM CURSOXASIGNATURA "
+					+ "INNER JOIN CURSOS  ON CURSOS.IDCURSO  = CURSOXASIGNATURA.IDCURSO "
+					+ "INNER JOIN ESTUDIANTE  ON ESTUDIANTE.IDESTUDIANTE  = CURSOS.IDCURSO "
+					+ "WHERE  CURSOXASIGNATURA.IDASIGNATURA  = " + idAsignatura;
+
+			List<EstudianteAsignaturasDTO> dto = new ArrayList<>();
+
+			List<Map<String, Object>> filas = template.queryForList(sql);
+
+			for (Map fila : filas) {
+				EstudianteAsignaturasDTO obj = new EstudianteAsignaturasDTO();
+				obj.getEstudiante().setIdEstudiante(1);;
+				obj.getEstudiante().setNombre((String) fila.get("nombre"));
+				obj.getCurso().setGrado((String) fila.get("grado"));
+				obj.getCurso().setSalon((String) fila.get("salon"));
+				dto.add(obj);
+			}
+
+			return dto;
+
+		} catch (Exception e) {
+			return null;
+		}
+
+	}
+
+}

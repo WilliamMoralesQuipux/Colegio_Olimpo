@@ -1,0 +1,7 @@
+package com.colegiohogwarts.app.web.controller.impl;
+
+import com.colegiohogwarts.app.web.controller.IAsignaturaController;
+
+public class AsignaturaController implements IAsignaturaController {
+
+}

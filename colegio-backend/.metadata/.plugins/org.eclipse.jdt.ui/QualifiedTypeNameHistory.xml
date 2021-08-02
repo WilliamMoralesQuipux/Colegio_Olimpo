@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.entity.Estudiante"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.dto.ProfesorAsignaturaDTO"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.entity.Asignatura"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.entity.Profesor"/>
+<fullyQualifiedTypeName name="org.springframework.boot.CommandLineRunner"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.JdbcTemplate"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.dao.IProfesorDao"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.service.IProfesorService"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.BeanPropertyRowMapper"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.controller.IAsignaturaController"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.service.IAsignaturarService"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.dao.IAsignaturaDao"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.controller.IEstudianteController"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.modelo.Asignatura"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.controller.IProfesorController"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.dto.EstudianteAsignaturasDTO"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.service.IEstudianteService"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.dao.IEstudianteDao"/>
+<fullyQualifiedTypeName name="java.awt.Cursor"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.modelo.Curso"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="com.colegiohogwarts.app.web.modelo.Estudiante"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,18 @@
+package com.colegiohogwarts.app.web.controller.impl;
+
+import java.util.ArrayList;
+
+import org.springframework.http.ResponseEntity;
+
+import com.colegiohogwarts.app.web.controller.IAsignaturaController;
+import com.colegiohogwarts.app.web.modelo.Asignatura;
+
+public class AsignaturaController implements IAsignaturaController {
+
+	@Override
+	public ResponseEntity<ArrayList<Asignatura>> getAsiganturasxprofeId(int idProfesor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

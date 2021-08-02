@@ -1,0 +1,13 @@
+package com.colegiohogwarts.app.web.dao;
+
+import java.util.ArrayList;
+
+import org.springframework.http.ResponseEntity;
+
+import com.colegiohogwarts.app.web.dto.EstudianteAsignaturasDTO;
+
+public interface IEstudianteDao {
+
+	public ArrayList<EstudianteAsignaturasDTO> getEstudiantexAsignaturaId(int idAsignatura);	
+	
+}

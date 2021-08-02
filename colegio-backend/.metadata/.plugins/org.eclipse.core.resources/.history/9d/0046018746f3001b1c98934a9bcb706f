@@ -1,0 +1,102 @@
+package com.colegiohogwarts.app.web.dao.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.colegiohogwarts.app.web.dao.IEstudianteDao;
+import com.colegiohogwarts.app.web.dto.EstudianteAsignaturasDTO;
+
+@Repository
+public class EstudianteDao implements IEstudianteDao {
+
+
+	@Autowired
+	private JdbcTemplate template;
+	
+	@Override
+	public List<EstudianteAsignaturasDTO> getEstudiantexAsignaturaId(int idAsignatura) {
+		
+		String sql = "SELECT  ESTUDIANTE.NOMBRE ,  CURSOS.grado , CURSOS.salon   FROM CURSOXASIGNATURA "+ 
+				"INNER JOIN CURSOS  ON CURSOS.IDCURSO  = CURSOXASIGNATURA.IDCURSO " + 
+				"INNER JOIN ESTUDIANTE  ON ESTUDIANTE.IDESTUDIANTE  = CURSOS.IDCURSO " + 
+				"WHERE  CURSOXASIGNATURA.IDASIGNATURA  = "+idAsignatura;
+		try {
+			
+			List<EstudianteAsignaturasDTO> dto = (ArrayList<EstudianteAsignaturasDTO>) template.query(sql,
+					new BeanPropertyRowMapper<EstudianteAsignaturasDTO>(EstudianteAsignaturasDTO.class));
+			return dto;
+		}catch (Exception e) {
+		    System.out.println ("El error es: " + e.getMessage());
+		    e.printStackTrace();
+			return null;
+		}
+		
+
+        List<EstudianteAsignaturasDTO> dto2 = new ArrayList<>();
+
+        List<Map<String, Object>> rows = template.queryForList(sql);
+
+        for (Map row : rows) {
+        	EstudianteAsignaturasDTO obj = new EstudianteAsignaturasDTO();
+
+        	obj.getEstudiante().setNombre((String) row.get("NAME"));
+            obj.setID(((Integer) row.get("ID")).longValue());
+            obj.setName((String) row.get("NAME"));
+            // Spring returns BigDecimal, need convert
+            obj.setAge(((BigDecimal) row.get("AGE")).intValue()); 
+            obj.setCreatedDate(((Timestamp) row.get("CREATED_DATE")).toLocalDateTime());
+            customers.add(obj);
+        }
+	
+		
+	}
+	
+	
+	
+	/*
+	 
+	 
+	 @Override
+	public ArrayList<EstudianteAsignaturasDTO> getEstudiantexAsignaturaId(int idAsignatura) {
+		
+		try {
+			String sql = "SELECT  ESTUDIANTE.NOMBRE ,  CURSOS.grado , CURSOS.salon   FROM CURSOXASIGNATURA "+ 
+					"INNER JOIN CURSOS  ON CURSOS.IDCURSO  = CURSOXASIGNATURA.IDCURSO " + 
+					"INNER JOIN ESTUDIANTE  ON ESTUDIANTE.IDESTUDIANTE  = CURSOS.IDCURSO " + 
+					"WHERE  CURSOXASIGNATURA.IDASIGNATURA  = "+idAsignatura;
+			ArrayList<EstudianteAsignaturasDTO> dto = (ArrayList<EstudianteAsignaturasDTO>) template.query(sql,
+					new BeanPropertyRowMapper<EstudianteAsignaturasDTO>(EstudianteAsignaturasDTO.class));
+			return dto;
+		}catch (Exception e) {
+		    System.out.println ("El error es: " + e.getMessage());
+		    e.printStackTrace();
+			return null;
+		}
+		
+	}
+	 
+	 
+	 
+	 
+	 */
+	
+	
+	
+
+/*
+ SELECT  ESTUDIANTE.NOMBRE ,  CURSOS.GRADO , CURSOS.SALON   FROM CURSOXASIGNATURA 
+INNER JOIN CURSOS  ON CURSOS.IDCURSO  = CURSOXASIGNATURA.IDCURSO 
+INNER JOIN ESTUDIANTE  ON ESTUDIANTE .IDESTUDIANTE  = CURSOS.IDCURSO 
+WHERE  CURSOXASIGNATURA.IDASIGNATURA  = 1 
+	
+ */
+	
+	
+	
+}

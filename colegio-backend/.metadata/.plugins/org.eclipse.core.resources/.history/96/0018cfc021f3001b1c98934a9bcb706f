@@ -1,0 +1,22 @@
+package com.colegiohogwarts.app.web.service.impl;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Service;
+
+import com.colegiohogwarts.app.web.modelo.Asignatura;
+import com.colegiohogwarts.app.web.service.IAsignaturarService;
+
+@Service
+public class AsignaturaService implements IAsignaturarService {
+	
+	
+
+	@Override
+	public ArrayList<Asignatura> getAsiganturas(int idProfesor) {
+		
+	//	return profesorDao.getAsiganturas(idProfesor);
+		return null;
+	}
+
+}

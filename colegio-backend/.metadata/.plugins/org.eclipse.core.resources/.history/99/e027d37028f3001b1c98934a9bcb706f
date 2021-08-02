@@ -1,0 +1,28 @@
+package com.colegiohogwarts.app.web.service.impl;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.colegiohogwarts.app.web.dao.IEstudianteDao;
+import com.colegiohogwarts.app.web.dto.EstudianteAsignaturasDTO;
+import com.colegiohogwarts.app.web.service.IEstudianteService;
+
+@Service
+public class EstudianteService implements IEstudianteService {
+
+	@Autowired
+	private IEstudianteDao estudianteDao;
+	
+	@Override
+	public ArrayList<EstudianteAsignaturasDTO> getEstudiantexAsignaturaId(int idProfesor) {
+	
+		return null;
+	}
+	
+
+	
+
+}

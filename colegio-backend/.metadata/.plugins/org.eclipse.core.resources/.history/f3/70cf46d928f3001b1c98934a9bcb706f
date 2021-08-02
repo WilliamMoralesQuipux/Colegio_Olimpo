@@ -1,0 +1,31 @@
+package com.colegiohogwarts.app.web.controller.impl;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.colegiohogwarts.app.web.controller.IEstudianteController;
+import com.colegiohogwarts.app.web.dto.EstudianteAsignaturasDTO;
+import com.colegiohogwarts.app.web.modelo.Asignatura;
+import com.colegiohogwarts.app.web.service.IEstudianteService;
+
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@RestController
+@RequestMapping("estudiante")
+public class EstudianteController implements IEstudianteController {
+
+	@Autowired
+	private IEstudianteService estudianteService;
+	
+	@Override
+	public ResponseEntity<ArrayList<EstudianteAsignaturasDTO>> getAsiganturasxprofeId(int asignaturaId) {
+		
+		ArrayList<EstudianteAsignaturasDTO> outDto =  estudianteService.getEstudiantexAsignaturaId(asignaturaId);
+		return estudianteService.getEstudiantexAsignaturaId(asignaturaId);
+	}
+
+}

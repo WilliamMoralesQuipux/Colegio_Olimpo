@@ -1,0 +1,34 @@
+package com.colegiohogwarts.app.web.dto;
+
+import java.io.Serializable;
+
+import com.colegiohogwarts.app.web.modelo.Asignatura;
+import com.colegiohogwarts.app.web.modelo.Curso;
+import com.colegiohogwarts.app.web.modelo.Estudiante;
+
+public class EstudianteAsignaturasDTO implements Serializable {
+
+	private static final long serialVersionUID = 174090847970721618L;
+
+	private Estudiante estudiante;
+	private Curso curso;
+
+	public Estudiante getEstudiante() {
+		return (estudiante == null) ? estudiante = new Estudiante() : estudiante;
+	}
+
+	public void setEstudiante(Estudiante estudiante) {
+		this.estudiante = estudiante;
+	}
+
+	public Curso getCurso() {
+		return (curso == null) ? new Curso() : curso;
+	}
+
+	public void setCurso(Curso curso) {
+		this.curso = curso;
+	}
+
+
+
+}
